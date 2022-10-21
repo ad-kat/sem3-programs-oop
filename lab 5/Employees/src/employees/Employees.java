@@ -1,44 +1,55 @@
-/*
- Define a class Employee with data members: employee name, city, basic salary, 
-dearness allowance (DA%) and house rent (HRA%). Define getdata(), calculate(), and 
-display() functions. Calculate method should find the total salary and display method 
-should display it.
- Total = basic+basic*da/100+basic*hra/100;
- */
-package employees;
 
+package employees;
 import java.util.*;
-public class Employees 
+
+class employee
 {
-    String empname,city;
-    double salary,DA,HRA;
-    
-    public Employees()
+    int basic_salary;
+    int dearness_allowance;
+    int house_rent;
+    int total;
+
+    public void getdata(int sal, int all, int ren)
     {
-        empname="";
-        city="";
-        salary=0.0;
-        DA=0.0;
-        HRA=0.0;
-        
+        basic_salary = sal;
+        dearness_allowance = all;
+        house_rent = ren;
     }
-    void getdata()
+
+    public void calculate()
     {
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Enter employee name:");
-        empname=sc.nextLine();
-        System.out.println("Enter city:");
-        city=sc.nextLine();
-        System.out.println("Enter basic salary:");
-        salary=sc.nextDouble();
-        System.out.println("Enter dearness allowance (DA%):");
-        DA=sc.nextDouble();
-        System.out.println("Enter house rent (HRA%):");
-        HRA=sc.nextDouble();
+       total = basic_salary + (basic_salary*dearness_allowance)/100 + house_rent;
     }
-    void cA
-    public static void main(String[] args) {
-        // TODO code application logic here
+
+    public void display()
+    {
+        System.out.println("The total is: " +total);
     }
-    
+}
+
+class Employees
+{
+    public static void main(String[] args)
+    {
+       int salary, allowance, rent;  
+       Scanner sc = new Scanner(System.in);
+       System.out.println("Enter your name:");
+       String name = sc.nextLine();
+       System.out.println("Enter your city name:");
+       String city = sc.nextLine();
+
+       System.out.println("Enter your basic salary:");
+       salary = sc.nextInt();
+       System.out.println("Enter your dearance allowance:");
+       allowance = sc.nextInt();
+       System.out.println("Enter house rent:");
+       rent = sc.nextInt();
+
+       System.out.println("YOUR NAME: " +name+ "\nYOUR CITY: " +city);
+
+       employee emp = new employee();
+       emp.getdata(salary, allowance, rent);
+       emp.calculate();
+       emp.display();
+    }
 }

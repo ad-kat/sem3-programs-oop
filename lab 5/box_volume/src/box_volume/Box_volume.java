@@ -1,9 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package box_volume;
-
 import java.util.*;
 class Box_volume 
 {
@@ -32,6 +27,5 @@ class Box_volume
         Box_volume bv=new Box_volume(p,q,r);
         double vol=bv.volume();
         System.out.println("Volume is:"+vol);
-    }
-    
+    }    
 }
